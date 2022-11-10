@@ -5,10 +5,7 @@
       <h1>Contacto</h1>
     </main>
     <section>
-      <form
-        @submit.prevent="postPlan()"
-        method="post"
-      >
+      <form id="form" @submit.prevent="create_budget()" method="post">
         <div>
           <label for="name">Tu nombre</label>
           <input
@@ -96,23 +93,43 @@
 <script>
 import HeaderSection from "../components/Header.vue";
 import FooterSection from "../components/Footer.vue";
+import axios from "axios";
 export default {
   name: "ItemView",
   components: {
     HeaderSection,
     FooterSection,
   },
-  // data() {
-
-  // },
-  // methods() {
-  //   postPlan() {
-  //     fetch('http://127.0.0.1:3000/api/v1/plans', {
-  //     })
-  //       .then((res) => console.log(res))
-  //       .catch(()=> console.log("error"))
-  //   };
-  // };
+  data() {
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      budget: "",
+      plan: "",
+      message: "",
+    };
+  },
+  methods: {
+    create_budget() {
+      axios
+        .post("http://127.0.0.1:3000/api/v1/budgets", {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          budget: this.budget,
+          plan: this.plan,
+          message: this.message,
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .then(() => this.$router.push({ name: "HomeRoute" }))
+        .catch((e) => {
+          console.log(e);
+          this.$router.push({ name: "NotFound" });
+        });
+    },
+  },
 };
 </script>
 
