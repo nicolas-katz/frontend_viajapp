@@ -1,9 +1,7 @@
 <template>
   <div>
     <HeaderSection></HeaderSection>
-    <main>
-      <h1>Contacto</h1>
-    </main>
+    <MainSection title="Cotización"></MainSection>
     <section>
       <form id="form" @submit.prevent="create_budget()" method="post">
         <div>
@@ -93,12 +91,14 @@
 <script>
 import HeaderSection from "../components/Header.vue";
 import FooterSection from "../components/Footer.vue";
+import MainSection from "../components/Main.vue";
 import axios from "axios";
 export default {
   name: "ItemView",
   components: {
     HeaderSection,
     FooterSection,
+    MainSection
   },
   data() {
     return {
@@ -134,31 +134,6 @@ export default {
 </script>
 
 <style scoped>
-main {
-  width: 100%;
-  height: max-content;
-  padding: 240px 100px 80px 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.281);
-  background-image: url(../assets/main.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-
-  text-align: center;
-}
-main h1 {
-  color: white;
-  font-size: 48px;
-  font-weight: 500;
-  text-transform: capitalize;
-}
 section {
   padding: 40px 180px;
 
@@ -218,13 +193,13 @@ section form button {
   width: max-content;
   padding: 0 40px;
 
-  background-color: rgb(138, 31, 31);
+  background-color: var(--colorPrincipal);
   border: none;
   border-radius: 40px;
 
   color: white;
 }
 section form button:hover {
-  background-color: rgb(85, 12, 12);
+  background-color: var(--colorHover);
 }
 </style>

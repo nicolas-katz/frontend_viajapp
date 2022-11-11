@@ -1,9 +1,7 @@
 <template>
   <div>
     <HeaderSection></HeaderSection>
-    <main>
-      <h1>Destinos</h1>
-    </main>
+    <MainSection title="Destinos"></MainSection>
     <div class="paquetes__container" v-if="paquetes.length > 0">
       <div class="item" v-for="item in paquetes" :key="item.id">
         <img src="../assets/diversion.jpg" />
@@ -20,11 +18,13 @@
 <script>
 import HeaderSection from "../components/Header.vue";
 import FooterSection from "../components/Footer.vue";
+import MainSection from "../components/Main.vue";
 export default {
   name: "PaquetesView",
   components: {
     HeaderSection,
     FooterSection,
+    MainSection,
   },
   data() {
     return {

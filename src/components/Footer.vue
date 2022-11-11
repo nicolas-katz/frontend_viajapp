@@ -47,7 +47,7 @@ export default {
 footer {
   width: 100%;
   height: max-content;
-  padding: 80px 100px;
+  padding: 80px 60px;
 
   background-color: black;
 

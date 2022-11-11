@@ -5,7 +5,7 @@
       No pudimos encontrar la página que estabas buscando. Porfavor vuelve a
       intentar.
     </p>
-    <a href="/">Ir al home</a>
+    <router-link to="/">Ir al home</router-link>
   </div>
 </template>
 
@@ -31,13 +31,13 @@ div {
 }
 div h1 {
   color: white;
-  font-size: 32px;
+  font-size: 68px;
   font-weight: 500;
   letter-spacing: 2px;
 }
 div p {
   max-width: 380px;
-  margin: 24px 0;
+  margin: 24px 0 32px 0;
 
   color: white;
   font-size: 18px;
@@ -53,7 +53,7 @@ div a {
   align-items: center;
   justify-content: center;
 
-  background-color: rgb(138, 31, 31);
+  background-color: var(--colorPrincipal);
   border-radius: 40px;
   transition: all 0.6s;
 

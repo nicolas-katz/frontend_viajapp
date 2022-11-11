@@ -1,11 +1,9 @@
 <template>
   <div>
     <HeaderSection></HeaderSection>
-    <main>
-      <h1>Nosotros</h1>
-    </main>
+    <MainSection title="Nosotros"></MainSection>
     <section>
-      <img src="../assets/aventura.jpg" />
+      <video src="../assets/video.mp4" controls></video>
       <p>
         Somos una agencia de viajes especializada en experiencias, dedicada a
         crear paquetes de alto impacto en el viajero para aprovechar al máximo
@@ -28,9 +26,9 @@
         Aventura, Fiesta, Historia o Relax.
       </p>
       <div>
-        <img src="../assets/aventura.jpg" />
-        <img src="../assets/aventura.jpg" />
-        <img src="../assets/aventura.jpg" />
+        <img src="../assets/nosotros.jpg" />
+        <img src="../assets/nosotros2.jpg" />
+        <img src="../assets/nosotros3.jpg" />
       </div>
     </section>
     <FooterSection></FooterSection>
@@ -40,57 +38,34 @@
 <script>
 import HeaderSection from "../components/Header.vue";
 import FooterSection from "../components/Footer.vue";
+import MainSection from "../components/Main.vue";
 export default {
   name: "NosotrosView",
   components: {
     HeaderSection,
     FooterSection,
+    MainSection
   },
 };
 </script>
 
 <style scoped>
-main {
-  width: 100%;
-  height: max-content;
-  padding: 240px 100px 80px 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.281);
-  background-image: url(../assets/main.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-
-  text-align: center;
-}
-main h1 {
-  color: white;
-  font-size: 48px;
-  font-weight: 500;
-  text-transform: capitalize;
-}
 section {
-  padding: 40px 180px;
+  padding: 120px 180px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-section img {
+section video {
   width: 100%;
-  height: 420px;
+  height: 480px;
 
   object-fit: cover;
 }
 section p {
-  margin: 68px 0;
+  margin: 80px 0;
 
   color: grey;
   font-size: 20px;

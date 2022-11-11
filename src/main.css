@@ -2,5 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: 'Roboto Slab', 'Inter', 'Rubik', sans-serif;
+}
+
+:root {
+    --colorPrincipal: rgb(41, 67, 179);
+    --colorHover: rgb(129, 138, 224);
 }

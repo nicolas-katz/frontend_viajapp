@@ -8,21 +8,19 @@ import "./main.css";
 // import components
 import App from "./App.vue";
 import HomeView from "./views/HomeView.vue";
-import PaquetesView from "./views/PaquetesView.vue";
-import OfertasView from "./views/OfertasView.vue";
+import DestinosView from "./views/DestinosView.vue";
 import ItemView from "./views/ItemView.vue";
 import NosotrosView from "./views/NosotrosView.vue";
-import ContactView from "./views/ContactView.vue";
+import CotizacionVIew from "./views/CotizacionVIew.vue";
 import NotFound from "./views/NotFound.vue";
 
 // config routes
 const routes = [
   { path: "/", name: "HomeRoute", component: HomeView },
-  { path: "/destinos", name: "PaquetesRoute", component: PaquetesView },
-  { path: "/ofertas", name: "OfertasRoute", component: OfertasView },
+  { path: "/destinos", name: "DestinosRoute", component: DestinosView },
   { path: "/destinos/:id", name: "ItemRoute", component: ItemView },
   { path: "/nosotros", name: "NosotrosRoute", component: NosotrosView },
-  { path: "/contacto", name: "ContactoRoute", component: ContactView },
+  { path: "/cotizacion", name: "CotizacionRoute", component: CotizacionVIew },
 
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
