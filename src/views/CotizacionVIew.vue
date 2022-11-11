@@ -121,9 +121,9 @@ export default {
           plan: this.plan,
           message: this.message,
         })
-        .then((res) => res.json())
+        .then((res) => res)
         .then((data) => console.log(data))
-        .then(() => this.$router.push({ name: "HomeRoute" }))
+        .then(() => this.$router.push({ name: "DestinosRoute" }))
         .catch((e) => {
           console.log(e);
           this.$router.push({ name: "NotFound" });

@@ -12,6 +12,7 @@ import DestinosView from "./views/DestinosView.vue";
 import ItemView from "./views/ItemView.vue";
 import NosotrosView from "./views/NosotrosView.vue";
 import CotizacionVIew from "./views/CotizacionVIew.vue";
+import AdminView from "./views/AdminView.vue";
 import NotFound from "./views/NotFound.vue";
 
 // config routes
@@ -21,6 +22,7 @@ const routes = [
   { path: "/destinos/:id", name: "ItemRoute", component: ItemView },
   { path: "/nosotros", name: "NosotrosRoute", component: NosotrosView },
   { path: "/cotizacion", name: "CotizacionRoute", component: CotizacionVIew },
+  { path: "/admin", name: "AdminRoute", component: AdminView },
 
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];

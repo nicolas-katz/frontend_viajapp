@@ -1,15 +1,14 @@
 <template>
   <div>
     <HeaderSection></HeaderSection>
-    <main>
-      <h1>{{ paquete.title }}</h1>
-    </main>
+    <MainSection title="Grecia"></MainSection>
     <section>
-      <img src='../assets/aventura.jpg' />
+      <img src="../assets/aventura.jpg" />
       <div>
         <h2>{{ paquete.title }}</h2>
-        <h3>${{ paquete.price }}</h3>
+        <h3>Desde ${{ paquete.price }}</h3>
         <p>{{ paquete.description }}</p>
+        <router-link to="/cotizacion">Pedir cotización</router-link>
       </div>
     </section>
     <FooterSection></FooterSection>
@@ -19,11 +18,13 @@
 <script>
 import HeaderSection from "../components/Header.vue";
 import FooterSection from "../components/Footer.vue";
+import MainSection from "../components/Main.vue";
 export default {
   name: "ItemView",
   components: {
     HeaderSection,
     FooterSection,
+    MainSection,
   },
   data() {
     return {
@@ -35,53 +36,29 @@ export default {
     fetch(`http://127.0.0.1:3000/api/v1/plans/${this.destino_id}`)
       .then((response) => response.json())
       .then((json) => (this.paquete = json))
-      .catch(() => console.log("error"))
-  }
+      .catch(() => console.log("error"));
+  },
 };
 </script>
 
 <style scoped>
-main {
-  width: 100%;
-  height: max-content;
-  padding: 240px 100px 80px 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.281);
-  background-image: url(../assets/main.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-
-  text-align: center;
-}
-main h1 {
-  color: white;
-  font-size: 48px;
-  font-weight: 500;
-  text-transform: capitalize;
-}
 section {
-  padding: 40px 180px;
+  padding: 100px 240px;
 
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 section img {
   width: 48%;
-  height: 540px;
+  height: 480px;
 
   object-fit: cover;
 }
 section div {
   width: 48%;
-  padding: 40px;
+  padding-left: 40px;
 
   display: flex;
   flex-direction: column;
@@ -93,10 +70,9 @@ section div h2 {
   font-weight: 500;
 }
 section div h3 {
-  margin: 10px 0 20px 0;
+  margin: 4px 0 20px 0;
   color: black;
-  font-size: 36px;
-  line-height: 46px;
+  font-size: 28px;
   font-weight: 400;
 }
 section div p {
@@ -104,5 +80,29 @@ section div p {
   font-size: 20px;
   line-height: 30px;
   font-weight: 300;
+}
+section div a {
+  width: max-content;
+  height: 54px;
+  margin-top: 32px;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--colorPrincipal);
+  border-radius: 40px;
+  transition: all 0.6s;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+section div a:hover {
+  background-color: var(--colorHover);
+
+  color: white;
 }
 </style>
